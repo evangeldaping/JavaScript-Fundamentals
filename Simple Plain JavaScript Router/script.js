@@ -51,11 +51,13 @@ const routes = [
 ];
 
 const parseLocation = () => location.hash.slice(1).toLowerCase() || '/';
+const findComponentByPath = (path, routes) => routes.find(r => r.path.match(new RegExp(`^\\${path}$`, 'gm'))) || undefined;
 
 const router = () => {
   // TODO: Get the current path
   const path = parseLocation();
   // TODO: Find the component based on the current path
+  const { component = ErrorComponent } = findComponentByPath(path, routes) || {};
   // TODO: If there's no matching route, get the "Error" component
   // TODO: Render the component in the "app" placeholder
 };
