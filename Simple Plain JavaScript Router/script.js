@@ -32,6 +32,17 @@ const Page2Component = {
   }
 } 
 
+const PageAboutComponent = {
+  render: () => {
+    return `
+      <section>
+        <h1>Page About</h1>
+        <p>This is just a test</p>
+      </section>
+    `;
+  }
+} 
+
 const ErrorComponent = {
   render: () => {
     return `
@@ -48,10 +59,11 @@ const routes = [
   { path: '/', component: HomeComponent, },
   { path: '/page1', component: Page1Component, },
   { path: '/page2', component: Page2Component, },
+  { path: '/pageAbout', component: PageAboutComponent, },
 ];
 
 const parseLocation = () => location.hash.slice(1).toLowerCase() || '/';
-const findComponentByPath = (path, routes) => routes.find(r => r.path.match(new RegExp(`^\\${path}$`, 'gm'))) || undefined;
+const findComponentByPath = (path, routes) => routes.find(r => r.path.match(new RegExp(`^\\${path}$`, 'gmi'))) || undefined;
 
 const router = () => {
   // TODO: Get the current path
