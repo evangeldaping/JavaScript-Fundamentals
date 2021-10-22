@@ -42,3 +42,10 @@ const ErrorComponent = {
     `;
   }
 }
+
+// Routes 
+const routes = [
+  { path: '/', component: HomeComponent, },
+  { path: '/page1', component: Page1Component, },
+  { path: '/page2', component: Page2Component, },
+];
