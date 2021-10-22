@@ -63,3 +63,6 @@ const router = () => {
   // TODO: Render the component in the "app" placeholder
   document.getElementById('app').innerHTML = component.render();
 };
+
+window.addEventListener('hashchange', router);
+window.addEventListener('load', router);
