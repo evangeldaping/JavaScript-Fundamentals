@@ -49,3 +49,10 @@ const routes = [
   { path: '/page1', component: Page1Component, },
   { path: '/page2', component: Page2Component, },
 ];
+
+const router = () => {
+  // TODO: Get the current path
+  // TODO: Find the component based on the current path
+  // TODO: If there's no matching route, get the "Error" component
+  // TODO: Render the component in the "app" placeholder
+};
