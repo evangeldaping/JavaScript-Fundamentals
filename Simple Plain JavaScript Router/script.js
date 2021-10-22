@@ -55,9 +55,11 @@ const findComponentByPath = (path, routes) => routes.find(r => r.path.match(new 
 
 const router = () => {
   // TODO: Get the current path
-  const path = parseLocation();
+  
   // TODO: Find the component based on the current path
-  const { component = ErrorComponent } = findComponentByPath(path, routes) || {};
+  const path = parseLocation();
   // TODO: If there's no matching route, get the "Error" component
+  const { component = ErrorComponent } = findComponentByPath(path, routes) || {};
   // TODO: Render the component in the "app" placeholder
+  document.getElementById('app').innerHTML = component.render();
 };
