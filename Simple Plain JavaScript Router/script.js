@@ -50,8 +50,11 @@ const routes = [
   { path: '/page2', component: Page2Component, },
 ];
 
+const parseLocation = () => location.hash.slice(1).toLowerCase() || '/';
+
 const router = () => {
   // TODO: Get the current path
+  const path = parseLocation();
   // TODO: Find the component based on the current path
   // TODO: If there's no matching route, get the "Error" component
   // TODO: Render the component in the "app" placeholder
